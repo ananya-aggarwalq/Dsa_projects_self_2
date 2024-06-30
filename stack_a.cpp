@@ -4,6 +4,7 @@
 
 //stack using fixed size arrays
 
+//constructor with empty stack
 Stack_A::Stack_A(){	
 	size = -1;									
 }											
