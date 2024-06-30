@@ -1,7 +1,5 @@
 #pragma once 
 
-/* PART A */
-/* Stacks using Fixed Size Arrays */
 
 class Stack_A {
 private:
