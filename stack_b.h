@@ -1,7 +1,5 @@
 #pragma once 
 
-/* PART B */
-/* Dynamic Stacks */
 
 class Stack_B {
 private:
