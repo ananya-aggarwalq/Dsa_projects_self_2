@@ -2,6 +2,9 @@
 #include<stdexcept>
 #include "stack_b.h"
 
+//stack using dynamically sized arrays
+
+//constructor with empty stack
 Stack_B::Stack_B(){
     try{	
     size = -1;			
@@ -10,10 +13,14 @@ Stack_B::Stack_B(){
     catch(std::exception e){
         throw(std::runtime_error("Out of Memory"));
     }					
-}												
+}
+
+//destructor
 Stack_B::~Stack_B(){
     delete[] stk;
-}	
+}
+
+//push function
 void Stack_B::push(int data){
     try{
     int fact = 2;
@@ -32,6 +39,8 @@ void Stack_B::push(int data){
         throw(std::runtime_error("Out of Memory"));
     }
 }
+
+//pop function
 int Stack_B::pop(){
     
     if(size<0){
@@ -54,20 +63,24 @@ int Stack_B::pop(){
     size--;
     return res;
 }}
+
+//element from top
 int Stack_B::get_element_from_top(int idx){
     if(idx<0 || size-idx<0){				
         throw std::runtime_error("Index out of range");}	
     else{						
         return stk[size-idx];}		
 }		
-						
+
+//element from bottom
 int Stack_B::get_element_from_bottom(int idx){		
     if(idx<0 || size-idx<0){						
         throw std::runtime_error("Index out of range");}	
     else{						
         return stk[idx];}					
  }
- 
+
+//printing stack
 void Stack_B::print_stack(bool top){
     if(size<0){
         throw std::runtime_error("Empty Stack");
@@ -83,7 +96,8 @@ void Stack_B::print_stack(bool top){
         }
     }}
 } 
- 
+
+//addition
 int Stack_B::add(){
     if(size<1){
         throw std::runtime_error("Not Enough Arguments");
@@ -95,7 +109,8 @@ int Stack_B::add(){
     push(ans);
     return ans;
 }}
- 
+
+//subtraction
 int Stack_B::subtract(){
     if(size<1){
         throw std::runtime_error("Not Enough Arguments");
@@ -108,6 +123,7 @@ int Stack_B::subtract(){
     return ans;
 }} 
 
+//multiplication
 int Stack_B::multiply(){
     if(size<1){
         throw std::runtime_error("Not Enough Arguments");
@@ -119,6 +135,8 @@ int Stack_B::multiply(){
     push(ans);
     return ans;
 }} 
+
+//division
 int Stack_B::divide(){
     if(size<1){
         throw std::runtime_error("Not Enough Arguments");
