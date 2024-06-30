@@ -2,38 +2,45 @@
 #include<stdexcept>
 #include "stack_a.h"
 
+//stack using fixed size arrays
+
 Stack_A::Stack_A(){	
 	size = -1;									
 }											
-							
+
+//push function
 void Stack_A::push(int data){					
     if(size>1023){					
         throw std::runtime_error("Stack Full");}		
     else{						
         stk[++size] =data;}					
 }						
-							
+
+//pop function
 int Stack_A::pop(){						
     if(size<0){						
         throw std::runtime_error("Empty Stack");}	
     else{						
         return stk[size--];}					
 }							
-							
+
+//element from top
 int Stack_A::get_element_from_top(int idx){			
     if(idx<0 || size-idx<0){				
         throw std::runtime_error("Index out of range");}	
     else{						
         return stk[size-idx];}				
 }						
-							
+
+//element from bottom
 int Stack_A::get_element_from_bottom(int idx){		
     if(idx<0 || size-idx<0){						
         throw std::runtime_error("Index out of range");}	
     else{						
         return stk[idx];}					
  }
- 
+
+//printing stack
 void Stack_A::print_stack(bool top){
     if(size<0){
         throw std::runtime_error("Empty Stack");
@@ -49,7 +56,8 @@ void Stack_A::print_stack(bool top){
         }
     }}
 } 
- 
+
+//addition
 int Stack_A::add(){
     if(size<1){
         throw std::runtime_error("Not Enough Arguments");
@@ -61,7 +69,8 @@ int Stack_A::add(){
     push(ans);
     return ans;
 }}
- 
+
+//subtraction
 int Stack_A::subtract(){
     if(size<1){
         throw std::runtime_error("Not Enough Arguments");
@@ -74,6 +83,7 @@ int Stack_A::subtract(){
     return ans;
 }} 
 
+//multiplication
 int Stack_A::multiply(){
     if(size<1){
         throw std::runtime_error("Not Enough Arguments");
@@ -85,6 +95,8 @@ int Stack_A::multiply(){
     push(ans);
     return ans;
 }} 
+
+//division
 int Stack_A::divide(){
     if(size<1){
         throw std::runtime_error("Not Enough Arguments");
