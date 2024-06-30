@@ -1,8 +1,6 @@
 #pragma once 
 #include "list.h"
 
-/* PART B */
-/* Stacks using Linked Lists */
 
 class Stack_C {
 private:
