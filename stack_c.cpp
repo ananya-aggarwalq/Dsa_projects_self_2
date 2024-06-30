@@ -4,6 +4,9 @@
 #include "list.h"
 #include "stack_c.h"
 
+//stack wih doubly linked lists
+
+//constructor
 Stack_C::Stack_C(){
     try{
         stk = new List();
@@ -12,9 +15,13 @@ Stack_C::Stack_C(){
         throw(std::runtime_error("Out of Memory"));
     }
 }
+
+//destructor
 Stack_C::~Stack_C(){
     delete stk;
 }
+
+//push function
 void Stack_C::push(int data){
     try{
         stk->insert(data);
@@ -23,6 +30,8 @@ void Stack_C::push(int data){
         throw(std::runtime_error("Out of Memory"));
     }
 }
+
+//pop function
 int Stack_C::pop(){
     if(stk->get_size()<=0){
         throw std::runtime_error("Empty Stack");
@@ -32,6 +41,8 @@ int Stack_C::pop(){
         return stk->delete_tail();
     }
 }
+
+//element from top
 int Stack_C::get_element_from_top(int idx){
     if(idx<0 || stk->get_size()-idx<=0){
         throw std::runtime_error("Index out of range");
@@ -44,6 +55,8 @@ int Stack_C::get_element_from_top(int idx){
         return cn->get_value();
     }
 }
+
+//element from bottom
 int Stack_C::get_element_from_bottom(int idx){
     if(idx<0 || stk->get_size()-idx<=0){
         throw std::runtime_error("Index out of range");
@@ -55,6 +68,8 @@ int Stack_C::get_element_from_bottom(int idx){
         return n->get_value();
     }
 }
+
+//print function
 void Stack_C::print_stack(bool top_or_bottom){
     if(stk->get_size()==0){
         throw std::runtime_error("Empty Stack");
@@ -77,6 +92,8 @@ void Stack_C::print_stack(bool top_or_bottom){
         }
     }
 }}
+
+//addition
 int Stack_C::add(){
     if(stk->get_size()<1){
         throw std::runtime_error("Not Enough Arguments");
@@ -88,6 +105,7 @@ int Stack_C::add(){
     push(ans);
     return ans;}}
 
+//subtraction
 int Stack_C::subtract(){
     if(stk->get_size()<1){
         throw std::runtime_error("Not Enough Arguments");
@@ -99,6 +117,8 @@ int Stack_C::subtract(){
     push(ans);
     return ans;}
 }
+
+//multiplication
 int Stack_C::multiply(){
     if(stk->get_size()<1){
         throw std::runtime_error("Not Enough Arguments");
@@ -110,6 +130,8 @@ int Stack_C::multiply(){
     push(ans);
     return ans;}
 }
+
+//division
 int Stack_C::divide(){
     if(stk->get_size()<1){
         throw std::runtime_error("Not Enough Arguments");
