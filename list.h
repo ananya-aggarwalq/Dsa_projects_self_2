@@ -1,9 +1,6 @@
 #pragma once 
 #include "node.h"
 
-/* PART B */
-/* Stacks using Linked Lists */
-
 
 
 class List {
@@ -17,7 +14,7 @@ public:
 
     ~List();
 
-    // Insert an element at the tail of the linked list 
+    // Insertion at the tail 
     void insert(int v);
 
     // Delete the tail of the linked list and return the value
@@ -25,7 +22,6 @@ public:
     int delete_tail();
 
     // Return the size of the linked list 
-    // Do not count the sentinel elements
     int get_size(); 
 
     // Return a pointer to the sentinel head of the linked list 
